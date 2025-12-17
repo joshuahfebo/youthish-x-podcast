@@ -22,6 +22,15 @@ import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import bgImage from "assets/images/bg3.jpg";
+import DomeGallery from "components/ReactBits/DomeGallery/DomeGallery";
+import img1 from "assets/images/event_imgs/img1.jpg";
+import img2 from "assets/images/event_imgs/img2.jpg";
+import img3 from "assets/images/event_imgs/img3.jpg";
+import img4 from "assets/images/event_imgs/img4.jpg";
+import img5 from "assets/images/event_imgs/img5.jpg";
+import img6 from "assets/images/event_imgs/img6.jpg";
+import img7 from "assets/images/event_imgs/img7.jpg";
+import img8 from "assets/images/event_imgs/img8.jpg";
 function BuiltByDevelopers() {
   return (
     <MKBox
@@ -54,7 +63,7 @@ function BuiltByDevelopers() {
           </MKTypography>
           <MKTypography
             component="a"
-            href="https://www.creative-tim.com/learning-lab/react/overview/material-kit/"
+            href="https://www.instagram.com/youthishfoundation/?hl=en"
             target="_blank"
             rel="noreferrer"
             variant="body2"
@@ -77,6 +86,33 @@ function BuiltByDevelopers() {
           >
             Join now <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
           </MKTypography>
+          <MKTypography color="white" variant="h3" textAlign="center" mb={4}>
+            Feel free to explore our world of events and memories
+          </MKTypography>
+          <div
+            style={{
+              width: "90vw",
+              height: "60vh",
+              display: "flex", // ✅ make it a flex container
+              alignItems: "center", // vertically center
+              justifyContent: "center", // horizontally center
+              margin: "0 auto", // ensure horizontal centering if needed
+              borderRadius: "32px", // ✅ rounded corners
+              overflow: "hidden", // ✅ clips DomeGallery to the radius
+              background: "rgba(255,255,255,0.08)", // optional glass base
+              backdropFilter: "blur(14px)", // optional glassmorphism pop
+              border: "1px solid rgba(255,255,255,0.25)", // subtle edge
+            }}
+          >
+            <DomeGallery
+              images={[img1, img2, img3, img4, img5, img6, img7, img8]}
+              fit={0.7}
+              minRadius={450}
+              imageBorderRadius={"20px"}
+              grayscale={false}
+              maxVerticalRotationDeg={8}
+            />
+          </div>
         </Grid>
       </Container>
     </MKBox>

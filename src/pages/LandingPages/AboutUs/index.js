@@ -31,7 +31,6 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 // About Us page sections
 import Information from "pages/LandingPages/AboutUs/sections/Information";
 import Team from "pages/LandingPages/AboutUs/sections/Team";
-import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
 import Newsletter from "pages/LandingPages/AboutUs/sections/Newsletter";
 
 // Routes
@@ -81,7 +80,7 @@ function AboutUs() {
             objectFit: "cover",
             position: "absolute",
             inset: 0,
-            zIndex: -2,
+            zIndex: 1,
           }}
         />
 
@@ -113,6 +112,7 @@ function AboutUs() {
               src={Logo}
               alt="I AM PODCAST Logo"
               loading="lazy"
+              zIndex={2}
               sx={{
                 maxWidth: { xs: "70%", md: "300px" },
                 height: "auto",
@@ -155,11 +155,21 @@ function AboutUs() {
           mt: -8,
           mb: 4,
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
+          background: "transparent",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        {" "}
+        <style>
+          {`
+          html,body{
+            background-image: radial-gradient(circle at top right, #0f0e0fff, #2b1055 60%, #5248aaff);
+          }
+        `}
+        </style>
         <Information />
         <Team />
-        <Featuring />
         <Newsletter />
       </Card>
 

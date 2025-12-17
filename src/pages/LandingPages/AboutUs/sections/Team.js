@@ -25,62 +25,69 @@ import MKTypography from "components/MKTypography";
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 // Images
-import team1 from "assets/images/crown.svg";
-import team2 from "assets/images/user.png";
 function Team() {
   return (
     <MKBox
+      borderRadius="xl"
       component="section"
-      variant="gradient"
-      bgColor="dark"
       position="relative"
-      py={6}
+      py={{ xs: 6, md: 10 }}
       px={{ xs: 2, lg: 0 }}
-      mx={-2}
+      sx={{
+        background: "radial-gradient(circle at top left, #5f2c82, #2b1055 60%, #0f0c29)",
+        overflow: "hidden",
+      }}
     >
-      <Container>
-        <Grid container>
-          <Grid item xs={12} md={8} sx={{ mb: 6 }}>
-            <MKTypography variant="h3" color="white">
+      {/* subtle glass overlay */}
+      <MKBox
+        position="absolute"
+        top={0}
+        left={0}
+        width="100%"
+        height="100%"
+        sx={{
+          backdropFilter: "blur(18px)",
+          background: "rgba(255,255,255,0.04)",
+        }}
+      />
+
+      <Container sx={{ position: "relative", zIndex: 2 }}>
+        {/* Header */}
+        <Grid container justifyContent="center">
+          <Grid item xs={12} md={8} textAlign={{ xs: "center", md: "left" }} mb={6}>
+            <MKTypography variant="h2" color="white" fontWeight="bold" gutterBottom>
               The Executive Team
             </MKTypography>
-            <MKTypography variant="body2" color="white" opacity={0.8}>
-              There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
-              at. That&apos;s my skill.
+            <MKTypography variant="body1" color="white" opacity={0.75}>
+              Ideas don’t spread themselves — people do.
             </MKTypography>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
+
+        {/* Cards */}
+        <Grid container spacing={4}>
           <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team1}
-                color="dark"
-                name="Larry Emmanuel ~ [HIM]"
-                position={{ color: "info", label: "Lead Podcaster & Streamer" }}
-                description="The main man behind the exquisite sequel podcast titled IAMPODCAST."
-              />
-            </MKBox>
+            <HorizontalTeamCard
+              name="Larry Emmanuel ~ [HIM]"
+              position={{ color: "info", label: "Lead Podcaster & Streamer" }}
+              description="The main man behind the exquisite sequel podcast titled IAMPODCAST."
+            />
           </Grid>
+
           <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team2}
-                name="Daniel Lema"
-                position={{ color: "info", label: "Co-founder" }}
-                description="Co-founding IAMPODCAST with Larry, He believes that ideas can be spread in a rather more serious note and what better way is there to do it other than through PODCASTS."
-              />
-            </MKBox>
+            <HorizontalTeamCard
+              name="Daniel Lema"
+              position={{ color: "info", label: "Co-founder" }}
+              description="Believes ideas deserve seriousness — and podcasts are the sharpest medium."
+            />
           </Grid>
+
           <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team2}
-                name="Dennis Nittu"
-                position={{ color: "info", label: "Co-founder & Aid" }}
-                description="Larry's trusted cofounder who helps him in his podcast ventures."
-              />
-            </MKBox>
+            <HorizontalTeamCard
+              name="Dennis Nittu"
+              position={{ color: "info", label: "Co-founder & Aid" }}
+              description="Larry’s trusted co-founder, ensuring vision turns into execution."
+            />
           </Grid>
         </Grid>
       </Container>

@@ -14,6 +14,9 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
+import { Link } from "react-router-dom";
+import img_logo from "assets/images/podcast3.png";
+import img_latest from "assets/images/event_imgs/img_latest.jpg";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -24,12 +27,10 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
-import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 import TextType from "components/ReactBits/TextType/TextType";
 // Presentation page sections
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
-import Testimonials from "pages/Presentation/sections/Testimonials";
 // Presentation page components
 import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
 //Import useState and useEffect
@@ -362,49 +363,90 @@ function Presentation() {
         </Container>
         <Container>
           <Grid container spacing={3}>
-            <Grid item xs={12} lg={4}>
-              <FilledInfoCard
-                variant="gradient"
-                color="info"
-                icon="flag"
-                title="Getting Started"
-                description="Check the possible ways of working with our product and the necessary files for building your own project."
-                action={{
-                  type: "external",
-                  route: "https://www.creative-tim.com/learning-lab/react/overview/material-kit/",
-                  label: "Let's start",
+            <MKBox
+              sx={{
+                maxWidth: 420,
+                mx: "auto",
+                borderRadius: "28px",
+                overflow: "hidden",
+                background: "rgba(255,255,255,0.75)",
+                backdropFilter: "blur(18px)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.15)",
+                transition: "transform 0.4s ease, box-shadow 0.4s ease",
+                "&:hover": {
+                  transform: "translateY(-6px)",
+                  boxShadow: "0 30px 70px rgba(0,0,0,0.25)",
+                },
+              }}
+            >
+              {/* Image */}
+              <MKBox
+                component="img"
+                src={img_latest}
+                alt="Latest Event"
+                sx={{
+                  width: "100%",
+                  height: 240,
+                  objectFit: "cover",
                 }}
               />
-            </Grid>
-            <Grid item xs={12} lg={4}>
-              <FilledInfoCard
-                color="info"
-                icon="precision_manufacturing"
-                title="Plugins"
-                description="Get inspiration and have an overview about the plugins that we used to create the Material Kit."
-                action={{
-                  type: "external",
-                  route: "https://www.creative-tim.com/learning-lab/react/overview/datepicker/",
-                  label: "Read more",
+
+              {/* Title */}
+              <MKBox p={3} textAlign="center">
+                <MKTypography
+                  variant="h5"
+                  fontWeight={800}
+                  color="text.primary"
+                  letterSpacing="-0.02em"
+                >
+                  Our Latest Event
+                </MKTypography>
+              </MKBox>
+            </MKBox>
+            <MKBox
+              component={Link}
+              to="/podcast"
+              sx={{
+                maxWidth: 420,
+                mx: "auto",
+                borderRadius: "26px",
+                p: 4,
+                marginTop: "20px",
+                textAlign: "center",
+                background: "linear-gradient(135deg, #0f0f12, #1a1a22)",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.6)",
+                transition: "transform 0.35s ease, box-shadow 0.35s ease",
+                "&:hover": {
+                  transform: "scale(1.04)",
+                  boxShadow: "0 35px 80px rgba(0,0,0,0.8)",
+                },
+              }}
+            >
+              {/* Logo */}
+              <MKBox
+                component="img"
+                src={img_logo}
+                alt="Partner Logo"
+                sx={{
+                  width: 120,
+                  height: 120,
+                  objectFit: "contain",
+                  mb: 3,
+                  filter: "drop-shadow(0 6px 20px rgba(255,255,255,0.15))",
+                  transition: "transform 0.4s ease",
+                  "&:hover": {
+                    transform: "rotate(-2deg) scale(1.08)",
+                  },
                 }}
               />
-            </Grid>
-            <Grid item xs={12} lg={4}>
-              <FilledInfoCard
-                color="info"
-                icon="apps"
-                title="Components"
-                description="Material Kit is giving you a lot of pre-made components, that will help you to build UI's faster."
-                action={{
-                  type: "external",
-                  route: "https://www.creative-tim.com/learning-lab/react/alerts/material-kit/",
-                  label: "Read more",
-                }}
-              />
-            </Grid>
+
+              {/* Heading */}
+              <MKTypography variant="h5" fontWeight={900} color="white" letterSpacing="-0.02em">
+                Our New Partner
+              </MKTypography>
+            </MKBox>
           </Grid>
         </Container>
-        <Testimonials />
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

@@ -31,7 +31,7 @@ function Counters() {
         <Grid container item xs={12} lg={9} sx={{ mx: "auto" }}>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
-              count={9000}
+              count={300}
               time={5}
               suffix="+"
               title="Votes"

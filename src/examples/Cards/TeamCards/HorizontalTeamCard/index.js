@@ -17,38 +17,58 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // @mui material components
-import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function HorizontalTeamCard({ image, name, position, description }) {
+function HorizontalTeamCard({ name, position, description }) {
   return (
-    <Card sx={{ mt: 3 }}>
-      <Grid container>
-        <Grid item xs={12} md={6} lg={4} sx={{ mt: -6 }}>
-          <MKBox width="100%" pt={2} pb={1} px={2}>
-            <MKBox component="img" src={image} alt={name} height="200px" />
-          </MKBox>
-        </Grid>
-        <Grid item xs={12} md={6} lg={8} sx={{ my: "auto" }}>
-          <MKBox pt={{ xs: 1, lg: 2.5 }} pb={2.5} pr={4} pl={{ xs: 4, lg: 1 }} lineHeight={1}>
-            <MKTypography variant="h3">
-              <AcUnitIcon />
-              {name}
-            </MKTypography>
-            <MKTypography variant="h4" color={position.color} mb={1}>
-              {position.label}
-            </MKTypography>
-            <MKTypography variant="h5" color="black" fontWeight="200">
-              {description}
-            </MKTypography>
-          </MKBox>
+    <MKBox
+      p={3}
+      borderRadius="24px"
+      sx={{
+        height: "100%",
+        background: "rgba(255,255,255,0.12)",
+        backdropFilter: "blur(20px)",
+        border: "1px solid rgba(255,255,255,0.25)",
+        boxShadow: "0 20px 40px rgba(0,0,0,0.35)",
+        transition: "all 0.35s ease",
+        "&:hover": {
+          transform: "translateY(-6px) scale(1.01)",
+          boxShadow: "0 30px 60px rgba(0,0,0,0.5)",
+        },
+      }}
+    >
+      <Grid container spacing={2} alignItems="center">
+        {/* Text */}
+        <Grid item xs={12}>
+          <MKTypography variant="h5" color="white" fontWeight="bold" mb={0.5}>
+            {name}
+          </MKTypography>
+
+          <MKTypography
+            variant="caption"
+            color={position.color}
+            fontWeight="medium"
+            sx={{
+              display: "inline-block",
+              px: 1.5,
+              py: 0.5,
+              borderRadius: "12px",
+              background: "rgba(255,255,255,0.15)",
+              backdropFilter: "blur(10px)",
+            }}
+          >
+            {position.label}
+          </MKTypography>
+
+          <MKTypography variant="body2" color="white" opacity={0.8} mt={2} lineHeight={1.6}>
+            {description}
+          </MKTypography>
         </Grid>
       </Grid>
-    </Card>
+    </MKBox>
   );
 }
 

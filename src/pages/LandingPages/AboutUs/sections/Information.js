@@ -12,58 +12,85 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
-// @mui material components
+// Material Kit 2 React components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-
-// Material Kit 2 React components
 import MKBox from "components/MKBox";
-
-// Material Kit 2 React examples
-import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
+import MKTypography from "components/MKTypography";
+import GlassInfoCard from "./GlassInfoCard";
 function Information() {
   return (
-    <MKBox component="section" py={12}>
-      <Container>
-        <Grid container spacing={3} alignItems="center">
+    <MKBox
+      borderRadius="xl"
+      component="section"
+      py={{ xs: 8, md: 12 }}
+      sx={{
+        background: "radial-gradient(circle at top right, #1a181bff, #2b1055 60%, #0f0c29)",
+        position: "relative",
+        overflow: "hidden",
+        marginBottom: "6rem",
+      }}
+      zIndex={2}
+    >
+      {/* Glass overlay */}
+      <MKBox
+        position="absolute"
+        inset={0}
+        sx={{
+          backdropFilter: "blur(20px)",
+          background: "rgba(255,255,255,0.05)",
+        }}
+      />
+
+      <Container sx={{ position: "relative", zIndex: 2 }}>
+        {/* Section header */}
+        <Grid container justifyContent="center" mb={8}>
+          <Grid item xs={12} md={8} textAlign="center">
+            <MKTypography variant="h2" color="white" fontWeight="bold" mb={2}>
+              What is IAMPODCAST?
+            </MKTypography>
+
+            <MKTypography variant="body1" color="white" opacity={0.8}>
+              A bold conversation hub where influence, creativity, and raw truth collide — hosted by
+              Larry Emmanuel.
+            </MKTypography>
+          </Grid>
+        </Grid>
+
+        {/* Info cards */}
+        <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} lg={6}>
-            <Grid container justifyContent="flex-start">
+            <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
-                <MKBox mb={5}>
-                  <DefaultInfoCard
-                    icon="public"
-                    title="Best Tiktoker"
-                    description="Get a chance to win as the best youth tiktoker"
-                  />
-                </MKBox>
+                <GlassInfoCard
+                  icon="mic"
+                  title="Unfiltered Conversations"
+                  description="Real talks with creators, thinkers, and voices shaping today’s culture — no scripts, no filters."
+                />
               </Grid>
+
               <Grid item xs={12} md={6}>
-                <MKBox mb={5}>
-                  <DefaultInfoCard
-                    icon="payments"
-                    title="Payments functionality"
-                    description="We get insulted by others, lose trust for those We get back freezes"
-                  />
-                </MKBox>
+                <GlassInfoCard
+                  icon="public"
+                  title="Youth & Digital Culture"
+                  description="Exploring trends, influence, and impact in the modern digital generation."
+                />
               </Grid>
+
               <Grid item xs={12} md={6}>
-                <MKBox mb={{ xs: 5, md: 0 }}>
-                  <DefaultInfoCard
-                    icon="apps"
-                    title="Prebuilt components"
-                    description="We get insulted by others, lose trust for those We get back freezes"
-                  />
-                </MKBox>
+                <GlassInfoCard
+                  icon="groups"
+                  title="Creator Spotlight"
+                  description="Shining light on upcoming and established creators making waves online."
+                />
               </Grid>
+
               <Grid item xs={12} md={6}>
-                <MKBox mb={{ xs: 5, md: 0 }}>
-                  <DefaultInfoCard
-                    icon="3p"
-                    title="Improved platform"
-                    description="We get insulted by others, lose trust for those We get back freezes"
-                  />
-                </MKBox>
+                <GlassInfoCard
+                  icon="bolt"
+                  title="More Than a Podcast"
+                  description="IAMPODCAST is evolving into a platform — conversations today, movements tomorrow."
+                />
               </Grid>
             </Grid>
           </Grid>
@@ -72,5 +99,4 @@ function Information() {
     </MKBox>
   );
 }
-
 export default Information;
