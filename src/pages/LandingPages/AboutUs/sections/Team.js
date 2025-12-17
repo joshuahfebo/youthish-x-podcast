@@ -25,11 +25,8 @@ import MKTypography from "components/MKTypography";
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 // Images
-import team1 from "assets/images/team-5.jpg";
-import team2 from "assets/images/bruce-mars.jpg";
-import team3 from "assets/images/ivana-squares.jpg";
-import team4 from "assets/images/ivana-square.jpg";
-
+import team1 from "assets/images/crown.svg";
+import team2 from "assets/images/user.png";
 function Team() {
   return (
     <MKBox
@@ -58,9 +55,10 @@ function Team() {
             <MKBox mb={1}>
               <HorizontalTeamCard
                 image={team1}
-                name="Emma Roberts"
-                position={{ color: "info", label: "UI Designer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                color="dark"
+                name="Larry Emmanuel ~ [HIM]"
+                position={{ color: "info", label: "Lead Podcaster & Streamer" }}
+                description="The main man behind the exquisite sequel podcast titled IAMPODCAST."
               />
             </MKBox>
           </Grid>
@@ -68,29 +66,19 @@ function Team() {
             <MKBox mb={1}>
               <HorizontalTeamCard
                 image={team2}
-                name="William Pearce"
-                position={{ color: "info", label: "Boss" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                name="Daniel Lema"
+                position={{ color: "info", label: "Co-founder" }}
+                description="Co-founding IAMPODCAST with Larry, He believes that ideas can be spread in a rather more serious note and what better way is there to do it other than through PODCASTS."
               />
             </MKBox>
           </Grid>
           <Grid item xs={12} lg={6}>
             <MKBox mb={{ xs: 1, lg: 0 }}>
               <HorizontalTeamCard
-                image={team3}
-                name="Ivana Flow"
-                position={{ color: "info", label: "Athlete" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team4}
-                name="Marquez Garcia"
-                position={{ color: "info", label: "JS Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                image={team2}
+                name="Dennis Nittu"
+                position={{ color: "info", label: "Co-founder & Aid" }}
+                description="Larry's trusted cofounder who helps him in his podcast ventures."
               />
             </MKBox>
           </Grid>

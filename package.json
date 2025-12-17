@@ -33,6 +33,7 @@
     "flatpickr": "4.6.13",
     "gsap": "^3.13.0",
     "liquid-glass-react": "^1.1.1",
+    "motion": "^12.23.26",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-bits": "^1.0.5",

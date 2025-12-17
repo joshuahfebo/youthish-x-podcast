@@ -36,16 +36,14 @@ import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 function ContactUs() {
   return (
     <>
-      <MKBox position="fixed" top="0.5rem" width="100%">
-        <DefaultNavbar
-          routes={routes}
-          action={{
-            type: "external",
-            route: "https://www.creative-tim.com/product/material-kit-react",
-            label: "free download",
-            color: "info",
-          }}
-        />
+      <style>
+        {`
+      html,body{
+        background-color: #444444ff;
+      }`}
+      </style>
+      <MKBox position="fixed" top="0.5rem" width="100%" bgColor="dark">
+        <DefaultNavbar routes={routes} transparent color="info" />
       </MKBox>
       <Grid container spacing={3} alignItems="center">
         <Grid item xs={12} lg={6}>
@@ -56,6 +54,7 @@ function ContactUs() {
             borderRadius="lg"
             ml={2}
             mt={2}
+            bgColor="dark"
             sx={{ backgroundImage: `url(${bgImage})` }}
           />
         </Grid>
@@ -70,7 +69,7 @@ function ContactUs() {
           mr={{ xs: "auto", lg: 6 }}
         >
           <MKBox
-            bgColor="white"
+            bgColor="dark"
             borderRadius="xl"
             shadow="lg"
             display="flex"
@@ -90,7 +89,7 @@ function ContactUs() {
               mt={-3}
             >
               <MKTypography variant="h3" color="white">
-                Contact us
+                Vote now!
               </MKTypography>
             </MKBox>
             <MKBox p={3}>

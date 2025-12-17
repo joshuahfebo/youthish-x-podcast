@@ -19,7 +19,7 @@ import PropTypes from "prop-types";
 // @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-
+import AcUnitIcon from "@mui/icons-material/AcUnit";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -30,23 +30,19 @@ function HorizontalTeamCard({ image, name, position, description }) {
       <Grid container>
         <Grid item xs={12} md={6} lg={4} sx={{ mt: -6 }}>
           <MKBox width="100%" pt={2} pb={1} px={2}>
-            <MKBox
-              component="img"
-              src={image}
-              alt={name}
-              width="100%"
-              borderRadius="md"
-              shadow="lg"
-            />
+            <MKBox component="img" src={image} alt={name} height="200px" />
           </MKBox>
         </Grid>
         <Grid item xs={12} md={6} lg={8} sx={{ my: "auto" }}>
           <MKBox pt={{ xs: 1, lg: 2.5 }} pb={2.5} pr={4} pl={{ xs: 4, lg: 1 }} lineHeight={1}>
-            <MKTypography variant="h5">{name}</MKTypography>
-            <MKTypography variant="h6" color={position.color} mb={1}>
+            <MKTypography variant="h3">
+              <AcUnitIcon />
+              {name}
+            </MKTypography>
+            <MKTypography variant="h4" color={position.color} mb={1}>
               {position.label}
             </MKTypography>
-            <MKTypography variant="body2" color="text">
+            <MKTypography variant="h5" color="black" fontWeight="200">
               {description}
             </MKTypography>
           </MKBox>

@@ -21,8 +21,6 @@ import Silk from "components/ReactBits/Silk/Silk";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKSocialButton from "components/MKSocialButton";
-
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
@@ -31,14 +29,10 @@ import TextType from "components/ReactBits/TextType/TextType";
 // Presentation page sections
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
-import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
-import Pages from "pages/Presentation/sections/Pages";
 import Testimonials from "pages/Presentation/sections/Testimonials";
-import Download from "pages/Presentation/sections/Download";
 // Presentation page components
 import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
 //Import useState and useEffect
-import { useState, useEffect } from "react";
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
@@ -53,12 +47,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Images
-import bg0 from "assets/images/newbg.jpg";
-import bg1 from "assets/images/newbg1.jpg";
-import bg2 from "assets/images/newbg2.jpg";
-import bg3 from "assets/images/newbg3.jpg";
-import bg4 from "assets/images/newbg4.jpg";
-import bg5 from "assets/images/newbg5.jpg";
 //Social media Icons
 const socialIcons = {
   facebook: faFacebook,
@@ -69,16 +57,6 @@ const socialIcons = {
 };
 
 function Presentation() {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % bgImages.length); // switch image
-      console.log(index);
-    }, 15000); // change image every 10s
-
-    return () => clearInterval(interval);
-  }, []);
-  const bgImages = [bg0, bg1, bg2, bg3, bg4, bg5];
   return (
     <>
       {/* Define the animations globally */}
@@ -382,9 +360,6 @@ function Presentation() {
         <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
         </Container>
-        <Download />
-        <DesignBlocks />
-        <Pages />
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={4}>
@@ -430,58 +405,6 @@ function Presentation() {
           </Grid>
         </Container>
         <Testimonials />
-        <MKBox pt={18} pb={6}>
-          <Container>
-            <Grid container spacing={3}>
-              <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
-                <MKTypography variant="h4" fontWeight="bold" mb={0.5}>
-                  Thank you for your support!
-                </MKTypography>
-                <MKTypography variant="body1" color="text">
-                  We deliver the best web products
-                </MKTypography>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                lg={5}
-                my={{ xs: 5, lg: "auto" }}
-                mr={{ xs: 0, lg: "auto" }}
-                sx={{ textAlign: { xs: "center", lg: "right" } }}
-              >
-                <MKSocialButton
-                  component="a"
-                  href="https://twitter.com/intent/tweet?text=Check%20Material%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23mui5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-kit-react"
-                  target="_blank"
-                  color="twitter"
-                  sx={{ mr: 1 }}
-                >
-                  <i className="fab fa-twitter" />
-                  &nbsp;Tweet
-                </MKSocialButton>
-                <MKSocialButton
-                  component="a"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-kit-react"
-                  target="_blank"
-                  color="facebook"
-                  sx={{ mr: 1 }}
-                >
-                  <i className="fab fa-facebook" />
-                  &nbsp;Share
-                </MKSocialButton>
-                <MKSocialButton
-                  component="a"
-                  href="https://www.pinterest.com/pin/create/button/?url=https://www.creative-tim.com/product/material-kit-react"
-                  target="_blank"
-                  color="pinterest"
-                >
-                  <i className="fab fa-pinterest" />
-                  &nbsp;Pin it
-                </MKSocialButton>
-              </Grid>
-            </Grid>
-          </Container>
-        </MKBox>
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

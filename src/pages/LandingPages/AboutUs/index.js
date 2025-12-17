@@ -123,7 +123,14 @@ function AboutUs() {
             <MKTypography variant="body1" color="white" mt={2} mb={3} fontWeight="bold">
               The #No.1 Youth Podcast streamers in Tz
             </MKTypography>
-            <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
+            <MKButton
+              variant="gradient"
+              color="light"
+              size="large"
+              component="a"
+              href="/"
+              sx={{ mb: 2 }}
+            >
               VOTE NOW!
             </MKButton>
             <MKTypography variant="h6" color="white" mt={8} mb={1}>
